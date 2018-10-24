@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="webApp">
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <link rel="stylesheet" href="app_css/common.css"/>
+  <link rel="stylesheet" href="app_css/mycss.css"/>
+  <link rel="stylesheet" href="app_css/user_page.css"/>
+</head>
+<body ng-controller="parentCtrl">
+<div class="header_box" ng-include="'tpl/include/header.html'"></div>
+<div ng-view></div>
+<!--footer-->
+<footer class="footer" ng-include="'tpl/include/footer.html'"></footer>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/angular.js"></script>
+<script src="js/angular-route.js"></script>
+<script src="js/angular-animate.js"></script>
+<script src="js/angular-sanitize.js"></script>
+<script src="app_js/weab.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!--top-->
+<div class="top">
+  <div class="contain">
+    <ul>
+      <li class="favorite"><a href="">收藏本网页</a></li>
+      <li class="mobilephone"><a href="">下载手机客户端</a></li>
+      <li class="email">反馈电子邮箱：<a href="">1484950412@qq.com</a></li>
+      <li class="telphone">客服热线:400-8218-8888</li>
+    </ul>
+  </div>
+</div>
+<!--header-->
+<header class="header">
+  <div class="contain">
+    <div class="logo"><a href="#/main"></a></div>
+    <div class="s-cart">
+      <a href="#/cart">
+        <em class="icon-cart"></em>我的购物车(<span id="cart_count">{{cartCount}}<span ng-if="!isLogin">0</span></span>)<em class="icon-arrows"></em>
+        <div class="cart-dropdown">
+          <span class="line"></span>
+          <h3 ng-if="kong">您的购物车为空</h3>
+          <h3 ng-if="!isLogin">请登录后查看您的购物车</h3>
+          <ul ng-if="isLogin">
+            <li class="clearfloat" ng-repeat="c in cart">
+              <a href=""><img ng-src="{{c.pic}}" alt=""/></a>
+              <dl>
+                <dt><a href="">{{c.title}}</a></dt>
+                <dd>¥{{c.price}}</dd>
+              </dl>
+              <em class="icon-remove" ng-click="delete($index)"></em>
+            </li>
+          </ul>
+          <div class="sum clearfloat" ng-if="isLogin">
+            <p>共计：<span>¥{{sumPrice}}</span></p>
+            <a href="">去结算</a>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="search">
+      <input type="text" placeholder="课程搜索">
+      <button></button>
+    </div>
+  </div>
+</header>
+<!--nav-->
+<nav class="navbar">
+  <div class="contain">
+    <ul class="nav">
+      <li class="active"><a href="#/main">首页</a></li>
+      <li><a href="#/course">全部商品</a></li>
+      <li><a href="#/course/1">热门商品</a></li>
+      <li><a href="#/course/2">核心商品</a></li>
+      <li><a href="#/course/3">常用商品</a></li>
+      <li><a href="#/collaborator">合作加盟</a></li>
+      <li><a href="#/address">地址</a></li>
+    </ul>
+    <div class="n_user">
+      <!-- 登录前-->
+      <p><a href="#/login">登录</a> | <a href="#/register">注册</a></p>
+      <!-- 登录后-->
+    </div>
+  </div>
+</nav>

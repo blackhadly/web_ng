@@ -1,0 +1,50 @@
+
+<div>
+  <!--面包屑导航-->
+  <div class="breadcrumb contain">
+    <a href="#/main">首页</a> &gt; <a href="#/list">全部菜品</a>
+  </div>
+  <!--主体内容-->
+  <article class="contain">
+    <section class="course_tag">
+      <span>菜品等级：</span>
+      <a href="#/list/{{t.tpid}}"
+         class="{{t.tpid==currentType?'active':''}}"
+         ng-repeat="t in typeData">{{t.tpname}}</a>
+    </section>
+    <section class="course_list">
+      <ul>
+        <li class="clearfloat" ng-repeat="course in courseData.data">
+          <a href="" class="course_img"><img ng-src="{{course.pic}}" alt=""/></a>
+          <div class="course_info">
+            <h2>{{course.title}}</h2>
+            <p>店家：{{course.tpname}}</p>
+            <p>时间：{{course.cLength}}</p>
+            <p>开门时间：{{course.startTime}}</p>
+            <p>地点：{{course.address}}
+              <a href="">查看各区地址</a></p>
+          </div>
+          <span>¥{{course.price}}</span>
+          <a href="#/course_detail/{{course.cid}}" class="course_btn">查看详情</a>
+        </li>
+      </ul>
+    </section>
+    <!-- 分页导航-->
+    <div class="pages">
+      <a ng-disabled="courseData.pageNum==1"
+              ng-click="getCourseData(courseData.pageNum-1,courseData.type)">
+        上一页</a>
+
+      <a ng-click="getCourseData(n,courseData.type)"
+              class="{{$index == courseData.pageNum-1?'cur':''}}"
+              ng-repeat="n in pageArray"
+              ng-disabled="courseData.pageNum-1 == $index">
+        {{n}}</a>
+
+      <a ng-disabled="courseData.pageNum==courseData.pageCount"
+              ng-click="getCourseData(courseData.pageNum+1,courseData.type)">
+        下一页</a>
+    </div>
+  </article>
+</div>
+<script src="app_js/main.js"></script>

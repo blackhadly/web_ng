@@ -1,0 +1,35 @@
+
+<!--面包屑导航-->
+<div class="breadcrumb contain">
+  <a href="">首页</a> &gt; <a href="">全部课程</a>
+</div>
+<!--主体内容-->
+<article class="contain">
+  <section class="course_head clearfloat">
+    <div class="course_img">
+      <img ng-src="{{course.pic}}" alt=""/>
+    </div>
+    <aside class="course_info">
+      <h2>{{course.title}}</h2>
+      <ul>
+        <li>店家：{{course.tname}}</li>
+        <li>时间：{{course.cLength}}</li>
+        <li>开门时间：{{course.startTime}}</li>
+        <li>地点：{{course.address}} <a href="">查看各校区地址</a></li>
+      </ul>
+      <p>课程价格：<strong id="price">¥{{course.price}} </strong></p>
+      <div class="course_link">
+        <span ng-click="addCart()" id="addCart" >
+          <em class="icon-cart"></em>加入购物车
+        </span>
+        <a href="">加入收藏</a>
+      </div>
+    </aside>
+  </section>
+  <section class="course_detail">
+    <h2 class="title"><span>课程详情</span></h2>
+    <div class="details" ng-bind-html="course.details">
+    </div>
+  </section>
+</article>
+<script src="app_js/main.js"></script>

@@ -1,0 +1,46 @@
+
+<!--面包屑导航-->
+<div class="breadcrumb contain">
+  <a href="">首页</a> &gt; <a href="">我的购物车</a>
+</div>
+<!--主体内容-->
+<!--页面主体-->
+<div class="main contain">
+  <div class="cart">
+    <div class="cart_con">
+      <div class="cartcon_title clearfloat">
+        <span><input type="checkbox" class="checkbox_all" ng-click="reserve"/> 全选</span>
+        <span>菜品信息</span>
+        <span>金额</span>
+        <span>操作</span>
+      </div>
+      <div class="cartcon_list">
+        <h2 ng-if="!isLogin">请登录后查看您的购物车 <a href="#/login">去登录</a></h2>
+        <h2 ng-if="kong">购物车中没有任何课程！<a href="#/course">查看全部课程</a></h2>
+        <ul ng-if="isLogin">
+          <li class="clearfloat" ng-repeat="b in cart" data-did="{{b.did}}">
+            <span><input type="checkbox" class="cart_checkbox"/></span>
+            <a href="#course_detail/{{b.cid}}" class="cart_img"><img ng-src="{{b.pic}}" alt=""/></a>
+            <a href="#course_detail/{{b.cid}}" class="cart_title">{{b.title}}</a>
+            <strong>¥{{b.price}}</strong>
+            <em class="remove" ng-click="delete($index)"></em>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+    <div class="cart_header">
+      <a href="" id="cart_delete" ng-click="delmore()">删除选中项</a>
+      <a href="" id="cart_clear" ng-click="clear()">清空购物车</a>
+      <span>已选菜品<em>{{cartCount}}</em>门</span>
+      <span>总金额：<strong>{{sumPrice}}</strong></span>
+      <button type="button">结算</button>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="app_js/main.js"></script>
+<script src="app_js/cart.js"></script>
+
