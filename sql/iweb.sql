@@ -21,18 +21,18 @@ INSERT INTO user VALUES
 
 /*老师表*/
 CREATE TABLE teacher(
-    tid INT PRIMARY KEY AUTO_INCREMENT,/*讲师编号*/
-    tname VARCHAR(32),          /*讲师姓名*/
-    maincourse VARCHAR(32),     /*主讲课程*/
+    tid INT PRIMARY KEY AUTO_INCREMENT,/*编号*/
+    tname VARCHAR(32),          /*姓名*/
+    maincourse VARCHAR(32),     /*主yao*/
     tpic VARCHAR(64),           /*照片*/
-    experience VARCHAR(1024),   /*工作经历*/
-    style VARCHAR(1024)         /*授课风格*/
+    experience VARCHAR(1024),   /*经历*/
+    style VARCHAR(1024)         
 );
 INSERT INTO teacher VALUES
-(1,'张东','合作人','img-teacher/zd.jpg','美国PMP认证高级项目经理，微软认证解决方案开发专家。先后在中软国际、中国搜索、太极计算机担任高级开发工程师，架构师，项目经理。曾担任中央外汇管理中心、中国石油、二炮工程研究院、首都国际机场技术咨询顾问。','一切从实际项目出发，快速入门，学以致用。讲课极富激情，语言表达精准，有感染力。案例丰富、直观，步骤细致，清晰。注重从学习到实际工作的快速转化。'),
-(2,'李文华','合作人','img-teacher/lwh.jpg','美国PMP认证高级项目经理，微软认证解决方案开发专家。先后在中软国际、中国搜索、太极计算机担任高级开发工程师，架构师，项目经理。曾担任中央外汇管理中心、中国石油、二炮工程研究院、首都国际机场技术咨询顾问。','一切从实际项目出发，快速入门，学以致用。讲课极富激情，语言表达精准，有感染力。案例丰富、直观，步骤细致，清晰。注重从学习到实际工作的快速转化。'),
-(3,'赵旭','合作人','img-teacher/zx.jpg','达内集团web讲师， 主讲 HTML5、Jquery、 Ajax 等课程。先后在一汽启明、日本インタセクト等公司担任系统开发工程师，从事软件开发和设计工作，迄今已积累5年以上的开发及教学经验，兼具技术和教学两方面的培训能力。','教学思路严谨，课堂气氛活跃。讲解时善于运用生活当中的例子，使学员能够快速理解。着重培养学员的动手能力，奉行实践是检验真理的唯一标准，教学能力受到学员们的一致好评。'),
-(4,'张众磊','合作人','img-teacher/zzl.jpg','先后就职于国家电网、凌阳科技，并担任研发组长、项目经理，具有6年Linux平台、移动APP的开发经验，具备深厚的开发和培训功底。','善于把知识结合贴切的案例，细心、耐心的传授给每个学员；将自身的工作经验和专业的授课手段全部奉献给每个学员；将“让学员就业不再困难”视为己任和奋斗目标。达内集团JS框架专家，主讲Bootstrap、AngularJS、移动开发等课程。');
+(1,'张东','合作人','img-teacher/zd.jpg','',''),
+(2,'李文华','合作人','img-teacher/lwh.jpg','',''),
+(3,'赵旭','合作人','img-teacher/zx.jpg','',''),
+(4,'张众磊','合作人','img-teacher/zzl.jpg','','');
 
 /*课程类型表*/
 CREATE TABLE type(
@@ -47,15 +47,15 @@ INSERT INTO type VALUES
 /*课程表*/
 CREATE TABLE course(
     cid INT PRIMARY KEY AUTO_INCREMENT,/*课程ID*/
-    typeId INT,             /*课程类型ID*/
-    title VARCHAR(32),      /*课程名称*/
-    teacherId INT,          /*老师ID*/
-    cLength VARCHAR(32),    /*课时*/
-    startTime VARCHAR(32),  /*开课时间*/
-    address VARCHAR(64),    /*授课地址*/
-    pic VARCHAR(64),        /*主图片*/
-    price FLOAT(8,2),       /*价格*/
-    details VARCHAR(2048)   /*课程详情*/
+    typeId INT,             
+    title VARCHAR(32),    
+    teacherId INT,         
+    cLength VARCHAR(32),    
+    startTime VARCHAR(32),  
+    address VARCHAR(64),    
+    pic VARCHAR(64),        
+    price FLOAT(8,2),     
+    details VARCHAR(2048)  
 );
 INSERT INTO course VALUES
 (NULL,'1','菜品指南','1','1天','每周一开','各地区','img-course/01.png','799.00','<P>话说有两个地方是我挪不动脚的，一个是图书馆，另外一个便是菜市场！ 每周有七天，留给自己的时间却很少。既要带儿子去上早教课，又要陪女儿上兴趣班，还要留一个半天带孩子们泡图书馆！ 有时真的觉得妈妈是这个世界上最伟大的职业，累，并快乐着！ 这个时节正是各类果蔬大量上市的时候，拖着买菜专用的小拉车，徜徉在人声鼎沸的菜市场，从海鲜区、肉类区再慢慢逛到我最喜爱的果蔬区，感受季节的变换带给人们餐桌上的喜悦………… </p>'),
